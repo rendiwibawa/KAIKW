@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -5,6 +6,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        ArrayList<Jadwal> arrJadwal = new ArrayList<Jadwal>(); 
+
+        inisialData(arrJadwal);
         int menu;
         do {
             System.out.println("===== SELAMAT DATANG DI KAIKW ======");
@@ -16,16 +20,23 @@ public class Main {
             menu = scan.nextInt();
             switch(menu){
                 case 1:
-                lihatJadwal();
+                lihatJadwal(arrJadwal);
             }
         } while (menu != 4);
 
+        scan.close();
     }
     // Hallo
 
-    static void lihatJadwal(){
-        Jadwal jadwal = new Jadwal(); 
-        jadwal.
+    static void lihatJadwal(ArrayList<Jadwal> arr){
+        // int size = arr.size();
+        for (Jadwal jadwal : arr) {
+            System.out.println(jadwal.datang + " " + jadwal.keberangkatan);
+        }
+    }
+
+    static void inisialData(ArrayList<Jadwal> arrJadwal) {
+        arrJadwal.add(new Jadwal("senin", "selasa"));
     }
 }
 
