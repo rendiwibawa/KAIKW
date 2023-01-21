@@ -30,7 +30,6 @@ public class Main {
                     System.out.println();
                     Jadwal.main(args);
                     promptEnterKey();
-
                     break;
                 case 2:
                     System.out.println("PESAN TIKET");
