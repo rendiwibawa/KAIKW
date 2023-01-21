@@ -8,6 +8,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int menu;
 
+        
         do {
             clearScreen();
             System.out.println("       SELAMAT DATANG DI KAIKW ");
@@ -28,9 +29,12 @@ public class Main {
                 case 1:
                     Load_Animate.animate(5);
                     System.out.println();
-                    Jadwal.main(args);
-                    promptEnterKey();
+                    Jadwal jadwal = new Jadwal(null, null);
 
+                    jadwal.inisialData();
+                    jadwal.lihatJadwal();
+
+                    promptEnterKey();
                     break;
                 case 2:
                     System.out.println("PESAN TIKET");
@@ -53,6 +57,8 @@ public class Main {
         System.out.println("Press \"ENTER\" to continue...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+        
+        scanner.close();
      }
     public static void clearScreen() {  
         System.out.print("\033[H\033[2J");  
