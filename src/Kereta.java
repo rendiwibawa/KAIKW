@@ -55,7 +55,7 @@ class Kereta {
     }
 
     void updateJumlahKursi(int jumlah) {
-        jumlahKursi = jumlah;
+        jumlahKursi -= jumlah;
     }    
 
 }

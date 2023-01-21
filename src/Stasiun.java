@@ -24,4 +24,8 @@ class Stasiun {
         }
     }
 
+    Stasiun getStasiun(int ind) {
+        return arrayList.get(ind);
+    }
+
 }

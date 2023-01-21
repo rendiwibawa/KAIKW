@@ -15,13 +15,12 @@ class Ticket {
         this.stasiun = stasiun;
     }
 
+    int getJumlahKursi() {
+        return jumlahKursi;
+    }
 
     void setJumlahKursi(int jml) {
         jumlahKursi -= jml;
-    }
-
-    int getJumlahKursi() {
-        return jumlahKursi;
     }
 
     // method

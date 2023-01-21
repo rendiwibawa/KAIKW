@@ -25,6 +25,7 @@ class Jadwal {
             i++;
         }
             System.out.println("=====================================================================");
+            i = 0;
     }
     
     Jadwal getJadwal(int ind) {
