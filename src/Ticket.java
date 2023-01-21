@@ -4,5 +4,6 @@ class Ticket {
     String tujuan;
     int jumlahKursi;
     int harga;
+    //Haloo
 
 }
