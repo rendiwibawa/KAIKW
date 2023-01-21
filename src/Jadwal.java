@@ -6,6 +6,7 @@ class Jadwal {
     Kereta kereta;
 
     private ArrayList<Jadwal> arrJadwal = new ArrayList<Jadwal>(); 
+    int i = 1;
 
     Jadwal(String datang, String keberangkatan) {
         this.datang = datang;
@@ -20,10 +21,11 @@ class Jadwal {
 
     void lihatJadwal(){
         for (Jadwal jadwal : arrJadwal) {
-            System.out.println("==================================================================");
-            System.out.println( "Kedatangan |\t"+jadwal.datang + "|Keberangkatan |\t" + jadwal.keberangkatan);
+            System.out.println("=====================================================================");
+            System.out.println( "(" + i + ")" + "Kedatangan |\t"+jadwal.datang + "|Keberangkatan |\t" + jadwal.keberangkatan);
+            i++;
         }
-            System.out.println("==================================================================");
+            System.out.println("=====================================================================");
     }
     
 }
