@@ -1,7 +1,8 @@
 class Ticket {
-    String type;
+
+    String tipeKereta;
     String tujuan;
+    int jumlahKursi;
     int harga;
 
-    // ibe kontoll
 }
