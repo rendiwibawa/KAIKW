@@ -16,27 +16,32 @@ public class Main {
             System.out.println("2. Pemesanan tiket"); // Pesen
             System.out.println("3. Cetak tiket"); 
             System.out.println("4. Exit");
-            System.out.println(">> ");
+            System.out.print(">> ");
             menu = scan.nextInt();
             switch(menu){
                 case 1:
                 lihatJadwal(arrJadwal);
             }
         } while (menu != 4);
+        System.out.println("Thanks :3");
 
         scan.close();
     }
-    // Hallo
 
     static void lihatJadwal(ArrayList<Jadwal> arr){
         // int size = arr.size();
         for (Jadwal jadwal : arr) {
-            System.out.println(jadwal.datang + " " + jadwal.keberangkatan);
+            System.out.println("==================================================================");
+            System.out.println( "Kedatangan |\t"+jadwal.datang + "|Keberangkatan |\t" + jadwal.keberangkatan);
         }
+        System.out.println("==================================================================");
+
     }
 
     static void inisialData(ArrayList<Jadwal> arrJadwal) {
-        arrJadwal.add(new Jadwal("senin", "selasa"));
+        arrJadwal.add(new Jadwal("senin  -13.00  ","senin  -13.00"));
+        arrJadwal.add(new Jadwal("selasa -13.20  ", "selasa -13.20"));
+        arrJadwal.add(new Jadwal("minggu -11.00  ","minggu -11.00"));
     }
 }
 
