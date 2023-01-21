@@ -1,9 +1,14 @@
 class Ticket {
-    Kereta kereta = new Kereta();
+    Jadwal jadwal;
+    Kereta kereta = new Kereta(jadwal);
     String kelas;
     String tujuan;
     int jumlahKursi;
     int harga;
+
+    Ticket(Jadwal jadwal) {
+        this.jadwal = jadwal;
+    }
 
     Pelanggan pelanggan = new Pelanggan();
     Stasiun stasiun = new Stasiun();
