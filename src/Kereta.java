@@ -2,6 +2,7 @@ class Kereta {
     String namaKereta;
     private int jumlahKursi = 40;
 
+    
 
     int showJumlahKursi() {
         return jumlahKursi;
@@ -10,4 +11,5 @@ class Kereta {
     void updateJumlahKursi(int jumlah) {
         jumlahKursi = jumlah;
     }    
+
 }
