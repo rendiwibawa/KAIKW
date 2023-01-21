@@ -57,7 +57,7 @@ public class Main {
         System.out.println("Press \"ENTER\" to continue...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
-        
+
         scanner.close();
      }
     public static void clearScreen() {  

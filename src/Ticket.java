@@ -6,6 +6,7 @@ class Ticket {
     int harga;
 
     Pelanggan pelanggan = new Pelanggan();
+    Stasiun stasiun = new Stasiun();
 
     // method
     void showDetails() {
