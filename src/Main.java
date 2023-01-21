@@ -12,7 +12,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int menu;
 
-        // Object From Ori Clas
+        // Object From Ori Class
         Jadwal jadwal = new Jadwal(null, null);
         Kereta kereta = new Kereta(null);
         Stasiun stasiun = new Stasiun(null, null);
@@ -81,40 +81,50 @@ public class Main {
         System.out.println("PESAN TIKET");
         String nama, email;
         int noTelp;
+        int stasiunInput;
+        int jadwalInput; 
+        int keretaInput;
 
-        do {
-            System.out.println("Masukkan nama anda : ");
+        do { //nama
+            System.out.print("Masukkan nama anda : ");
             nama = sc.nextLine();
-
         } while (nama.length() < 1);
 
-        do {
-            System.out.println("Masukkan email anda : ");
+        do { //email
+            System.out.print("Masukkan email anda : ");
             email = sc.nextLine();
         } while (email.length() < 1 || !email.contains("@"));
 
-        do{
-            System.out.println("Masukkan nomor telepon : ");
+        do{ //nomor telepon
+            System.out.print("Masukkan nomor telepon : ");
             noTelp = sc.nextInt();
         }while(noTelp < 1);
         
-
         Pelanggan pelanggan = new Pelanggan(nama, email, noTelp);
 
-        // Stasiun
-        stasiun.printData();
-        System.out.println("Pilih Stasiun (1 - 3) : ");
-        int stasiunInput = sc.nextInt() - 1;
+
+        do{ // Stasiun
+            stasiun.printData();
+            System.out.print("Pilih Stasiun (1 - 3) : ");
+            stasiunInput = sc.nextInt() - 1;
+        }while(stasiunInput < 1 || stasiunInput > 3);
+        
 
         // Jadwal
-        jadwal.lihatJadwal();
-        System.out.println("Pilih waktu keberangkatan (1 - 3) : ");
-        int jadwalInput = sc.nextInt() - 1;
+        do{
+            jadwal.lihatJadwal();
+            System.out.print("Pilih waktu keberangkatan (1 - 3) : ");
+            jadwalInput = sc.nextInt() - 1;
+        }while (jadwalInput < 1 || jadwalInput > 3);
+        
 
         // Kereta
-        kereta.printKereta();
-        System.out.println("Pilih Kereta (1 - 5) : ");
-        int keretaInput = sc.nextInt() - 1;
+        do{
+            kereta.printKereta();
+            System.out.print("Pilih Kereta (1 - 5) : ");
+            keretaInput = sc.nextInt() - 1;
+        }while(keretaInput < 1 || keretaInput > 5);
+        
 
         // Kelas
         System.out.println("Pilih Kelas kereta (Ekonomi|Eksekutif|Bisnis) : ");
@@ -125,6 +135,7 @@ public class Main {
                 jadwal.getJadwal(jadwalInput),
                 pelanggan,
                 stasiun.getStasiun(stasiunInput));
+
 
         // Jumlah Kursi
         int kursiTersedia = kereta.getKereta(keretaInput).showJumlahKursi();
