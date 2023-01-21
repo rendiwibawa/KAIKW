@@ -1,17 +1,28 @@
 class Ticket {
-    Jadwal jadwal;
-    Kereta kereta = new Kereta(jadwal);
     String kelas;
-    String tujuan;
     int jumlahKursi;
     int harga;
 
-    Ticket(Jadwal jadwal) {
+    Kereta kereta;
+    Jadwal jadwal;
+    Pelanggan pelanggan;
+    Stasiun stasiun;
+
+    Ticket(Kereta kereta, Jadwal jadwal, Pelanggan pelanggan, Stasiun stasiun) {
+        this.kereta = kereta;
         this.jadwal = jadwal;
+        this.pelanggan = pelanggan;
+        this.stasiun = stasiun;
     }
 
-    Pelanggan pelanggan = new Pelanggan();
-    Stasiun stasiun = new Stasiun();
+
+    void setJumlahKursi(int jml) {
+        jumlahKursi -= jml;
+    }
+
+    int getJumlahKursi() {
+        return jumlahKursi;
+    }
 
     // method
     void showDetails() {
@@ -22,5 +33,4 @@ class Ticket {
         System.out.println("Jumlah Kursi : " + jumlahKursi);
         System.out.println("Total Harga : " + (jumlahKursi * harga));
     }
-
 }
