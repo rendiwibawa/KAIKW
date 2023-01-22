@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import javax.swing.text.AbstractDocument.Content;
 
-import javafx.scene.chart.NumberAxis;
+// import javafx.scene.chart.NumberAxis;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -49,9 +49,11 @@ public class Main {
                     promptEnterKey();
                     break;
                 case 2:
+                    Load_Animate.animate(5);
                     pesan(jadwal, kereta, stasiun, scan);
                     break;
                 case 3:
+                    Load_Animate.animate(5);
                     System.out.println("CETAK TIKET");
                     promptEnterKey();
                     break;
