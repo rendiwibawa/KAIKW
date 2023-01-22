@@ -108,7 +108,6 @@ class Pemesanan {
         int jumlah = sc.nextInt();
 
         kereta.getKereta(keretaInput).updateJumlahKursi(jumlah);
-        ticket.kelas = kelas;
 
         // TODO: Buat kalkulasi harga bedasarkan kelas yang dipilih
         ticket.harga = jumlah * 10000;
