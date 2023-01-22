@@ -52,9 +52,9 @@ class Ticket {
         System.out.println("|| kelas / Class\tJumlah kursi / Total seat ||");
         System.out.println("|| *" + kelas + " \t\t*"  + pemesanan.jumlahKursi+"\t\t\t  ||");
         System.out.println("|| Kedatangan / Arrival\tKeberangkatan / Departure ||");
-        System.out.println("|| *" + jadwal.datang + "\t*" + jadwal.keberangkatan + "\t\t ||");
+        System.out.println("|| *" + jadwal.datang + "\t*" + jadwal.keberangkatan + "\t\t  ||");
         System.out.println("|| Harga / Price\tID Ticket\t\t  ||");
-        System.out.println("|| *Rp."+ harga + "\t\t*" + idTicket + "\t\t   ||");
+        System.out.println("|| *Rp."+ harga + "\t\t*" + idTicket + "\t\t  ||");
         System.out.println("====================================================");
     }
 }
