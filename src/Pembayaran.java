@@ -1,10 +1,12 @@
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Pembayaran {
     // Ticket ticket = new Ticket();
     ArrayList<Pemesanan> pemesanans;
     private int totalHarga;
+    int uangBayar;
 
     String metodeBayar;
     String kelas; // Pemesanan
@@ -12,29 +14,8 @@ class Pembayaran {
     
     int x = 0;
 
-
-    // TODO: Finish the pembayaran method for calculate the price
-    // Pembayaran(String kelas){
-    //     this.kelas = kelas;
-    //     if(this.kelas == "Ekonomi"){
-    //         x = 10000;
-    //     }else if (this.kelas == "Eksekutif") {
-    //         x = 15000;
-    //     }else if(this.kelas == "Bisnis"){
-    //         x = 25000;
-    //     }
-    // }
-
     Pembayaran(ArrayList<Pemesanan> pemesanans) {
         this.pemesanans = pemesanans;
-    }
-
-    int hitungTotal() {
-        for (Pemesanan pemesanan : pemesanans) {
-            totalHarga += pemesanan.totalHarga;   
-        }
-
-        return totalHarga;
     }
 
     void setTotalHarga(int jml){
@@ -43,5 +24,28 @@ class Pembayaran {
 
     int getTotalHarga(){
         return totalHarga;
+    }
+
+    public void formUi(Scanner sc) {
+        System.out.println("Pembayaran");
+
+        System.out.println("Id Tiket yang dipesan :");
+        int i = 1;
+        for (Pemesanan pemesanan : pemesanans) {
+            System.out.println(i++ + ". " + pemesanan.ticket.idTicket);
+        }
+        i = 1;
+
+        for (Pemesanan pemesanan : pemesanans) {
+            totalHarga += pemesanan.ticket.harga;
+        }
+        System.out.println("Total harga : " + totalHarga);
+
+        System.out.print("Masukkan uang anda : ");
+        uangBayar = sc.nextInt();
+
+        System.out.println("Uang kembalian : " + (totalHarga - uangBayar));
+
+
     }
 }

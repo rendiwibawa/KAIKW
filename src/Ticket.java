@@ -1,6 +1,8 @@
+import java.util.UUID;
+
 class Ticket {
     String kelas;
-    int idTicket;
+    String idTicket;
     int jumlahKursi;
     int harga;
 
@@ -14,6 +16,9 @@ class Ticket {
         this.jadwal = jadwal;
         this.pelanggan = pelanggan;
         this.stasiun = stasiun;
+
+        idTicket = UUID.randomUUID().toString();
+        idTicket = idTicket.substring(0,8);
     }
 
     int getJumlahKursi() {

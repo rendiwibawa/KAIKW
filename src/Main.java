@@ -11,7 +11,7 @@ public class Main {
     static ArrayList<Pemesanan> pemesananArr = new ArrayList<Pemesanan>();
     static Animation animation = new Animation();
 
-    public static void main(String[] args) {
+    static public void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int menu;
 
@@ -53,6 +53,8 @@ public class Main {
                 case 2:
                     animation.animate(5);
                     Pemesanan.formUi(jadwal, kereta, stasiun, scan, animation, pemesananArr);
+                    Pembayaran pembayaran = new Pembayaran(pemesananArr);
+                    pembayaran.formUi(scan);
                     break;
             }
 
