@@ -107,7 +107,7 @@ public class Main {
             stasiun.printData();
             System.out.print("Pilih Stasiun (1 - 3) : ");
             stasiunInput = sc.nextInt() - 1;
-        }while(stasiunInput < 1 || stasiunInput > 3);
+        }while(stasiunInput < 0 || stasiunInput > 2);
         
 
         // Jadwal
@@ -115,7 +115,7 @@ public class Main {
             jadwal.lihatJadwal();
             System.out.print("Pilih waktu keberangkatan (1 - 3) : ");
             jadwalInput = sc.nextInt() - 1;
-        }while (jadwalInput < 1 || jadwalInput > 3);
+        }while (jadwalInput < 0 || jadwalInput > 2);
         
 
         // Kereta
@@ -123,7 +123,7 @@ public class Main {
             kereta.printKereta();
             System.out.print("Pilih Kereta (1 - 5) : ");
             keretaInput = sc.nextInt() - 1;
-        }while(keretaInput < 1 || keretaInput > 5);
+        }while(keretaInput < 0 || keretaInput > 4);
         
 
         // Kelas

@@ -24,7 +24,7 @@ class Stasiun {
             System.out.println("(" + i + "). " + "Nama : " + stasiun.nama + ", Alamat : " + stasiun.lokasi);
             i++;
         }
-        i = 0;
+        i = 1;
     }
 
     Stasiun getStasiun(int ind) {
