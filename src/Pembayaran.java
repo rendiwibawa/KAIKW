@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Pembayaran {
     // Ticket ticket = new Ticket();
-    ArrayList<Pemesanan> pemesanans;
+    private ArrayList<Pemesanan> pemesanans;
     private int totalHarga;
     int uangBayar;
 
@@ -48,5 +48,9 @@ class Pembayaran {
         
         System.out.println("Uang kembalian : " + ((totalHarga - uangBayar)*-1));
          
+    }
+
+    ArrayList<Pemesanan> getPemesananArr() {
+        return pemesanans;
     }
 }

@@ -17,7 +17,7 @@ class Kereta {
         keretaArr.add(new Kereta("Arjuna"));
         keretaArr.add(new Kereta("Nakula"));
         keretaArr.add(new Kereta("Sadewa"));
-        keretaArr.add(new Kereta("Bima"));
+        keretaArr.add(new Kereta("BimaSakit"));
     }
 
     void printKereta() {

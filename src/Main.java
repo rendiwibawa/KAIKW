@@ -19,6 +19,8 @@ public class Main {
         Jadwal jadwal = new Jadwal(null, null);
         Kereta kereta = new Kereta(null);
         Stasiun stasiun = new Stasiun(null, null);
+        Pembayaran pembayaran = new Pembayaran(pemesananArr);
+        Ticket ticket = new Ticket(kereta, jadwal, null, stasiun);
 
         jadwal.inisialData();
         kereta.inisialData();
@@ -36,7 +38,8 @@ public class Main {
             System.out.println("====================================");
             System.out.println("1. Cek jadwal kereta"); // ngeprint
             System.out.println("2. Pemesanan tiket"); // Pesen
-            System.out.println("3. Exit");
+            System.out.println("3. Cetak Ticket");
+            System.out.println("4. Exit");
             System.out.print(">> ");
             menu = scan.nextInt();
             scan.nextLine();
@@ -53,11 +56,23 @@ public class Main {
                 case 2:
                     animation.animate(5);
                     Pemesanan.formUi(jadwal, kereta, stasiun, scan, animation, pemesananArr);
-                    Pembayaran pembayaran = new Pembayaran(pemesananArr);
                     pembayaran.formUi(scan);
                     animation.promptEnterKey();
                     break;
                 case 3:
+
+                    ArrayList<Pemesanan> pemesanans = pembayaran.getPemesananArr();
+
+                    for(int i = 0; i < pemesanans.size(); i++) {
+                        pemesanans.get(i).ticket.cetakTiket();
+                    }
+                    if(pemesanans.size() == 0){
+                        System.out.println("No Ticket Available !");
+                    }
+
+                    animation.promptEnterKey();
+                    
+                case 4:
                     break;
             }
 

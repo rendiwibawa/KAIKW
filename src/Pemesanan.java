@@ -3,11 +3,14 @@ import Animation.Animation;
 
 class Pemesanan {
     String status = "PENDING";
+    static int jumlahKursi;
 
     Ticket ticket;
 
     Pemesanan (Ticket ticket) {
         this.ticket = ticket;
+        this.jumlahKursi = jumlahKursi;
+
     }
 
     static void formUi(Jadwal jadwal, Kereta kereta, Stasiun stasiun, Scanner sc, Animation animation, ArrayList<Pemesanan> pemesananArr) {
@@ -102,10 +105,10 @@ class Pemesanan {
                 System.out.print("Pilih jumlah kursi " + kursiTersedia + " : ");
                 int jumlah = sc.nextInt(); sc.nextLine();
 
+                jumlahKursi = jumlah;
                 kereta.getKereta(keretaInput).updateJumlahKursi(jumlah);
 
                 ticket.harga *= jumlah;
-                
 
                 Pemesanan pemesanan = new Pemesanan(ticket);
                 pemesananArr.add(pemesanan);
@@ -120,5 +123,6 @@ class Pemesanan {
 
         // animation.promptEnterKey();
     }
+
 
 }

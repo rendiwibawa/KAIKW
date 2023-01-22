@@ -30,7 +30,6 @@ class Jadwal {
     
     Jadwal getJadwal(int ind) {
         return arrJadwal.get(ind);
-         
     }
 }
 
