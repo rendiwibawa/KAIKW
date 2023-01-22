@@ -1,13 +1,13 @@
 import java.util.Scanner;
-
-import javax.swing.text.AbstractDocument.Content;
-
 // import javafx.scene.chart.NumberAxis;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Main {
+    static ArrayList<Pemesanan> pemesananArr = new ArrayList<Pemesanan>();
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int menu;
@@ -150,6 +150,12 @@ public class Main {
 
         // TODO: Buat kalkulasi harga bedasarkan kelas yang dipilih
         ticket.harga = jumlah * 10000;
+
+        Pemesanan pemesanan = new Pemesanan(ticket);
+        pemesananArr.add(pemesanan);
+
+
+        // Pembayaran pembayaran = new Pembayaran(pemesananArr);
 
         promptEnterKey();
     }

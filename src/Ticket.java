@@ -1,5 +1,6 @@
 class Ticket {
     String kelas;
+    int idTicket;
     int jumlahKursi;
     int harga;
 

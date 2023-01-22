@@ -1,23 +1,39 @@
 import java.sql.Time;
+import java.util.ArrayList;
 
 class Pembayaran {
     // Ticket ticket = new Ticket();
-   private int totalHarga;
+    ArrayList<Pemesanan> pemesanans;
+    private int totalHarga;
+
     String metodeBayar;
-    String kelas;
+    String kelas; // Pemesanan
     Time waktuBayar;
+    
     int x = 0;
 
     // TODO: Finish the pembayaran method for calculate the price
-    Pembayaran(String kelas){
-        this.kelas = kelas;
-        if(this.kelas == "Ekonomi"){
-            x = 10000;
-        }else if (this.kelas == "Eksekutif") {
-            x = 15000;
-        }else if(this.kelas == "Bisnis"){
-            x = 25000;
+    // Pembayaran(String kelas){
+    //     this.kelas = kelas;
+    //     if(this.kelas == "Ekonomi"){
+    //         x = 10000;
+    //     }else if (this.kelas == "Eksekutif") {
+    //         x = 15000;
+    //     }else if(this.kelas == "Bisnis"){
+    //         x = 25000;
+    //     }
+    // }
+
+    Pembayaran(ArrayList<Pemesanan> pemesanans) {
+        this.pemesanans = pemesanans;
+    }
+
+    int hitungTotal() {
+        for (Pemesanan pemesanan : pemesanans) {
+            totalHarga += pemesanan.totalHarga;   
         }
+
+        return totalHarga;
     }
 
     void setTotalHarga(int jml){
