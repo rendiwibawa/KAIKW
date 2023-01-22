@@ -12,6 +12,7 @@ class Pembayaran {
     
     int x = 0;
 
+
     // TODO: Finish the pembayaran method for calculate the price
     // Pembayaran(String kelas){
     //     this.kelas = kelas;

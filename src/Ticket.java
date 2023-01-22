@@ -9,7 +9,7 @@ class Ticket {
     Pelanggan pelanggan;
     Stasiun stasiun;
 
-    Ticket(Kereta kereta, Jadwal jadwal, Pelanggan pelanggan, Stasiun stasiun) {
+    Ticket(Kereta kereta, Jadwal jadwal, Pelanggan pelanggan, Stasiun stasiun, int harga) {
         this.kereta = kereta;
         this.jadwal = jadwal;
         this.pelanggan = pelanggan;
