@@ -99,7 +99,7 @@ class Pemesanan {
 
                 // Jumlah Kursi
                 int kursiTersedia = kereta.getKereta(keretaInput).showJumlahKursi();
-                System.out.println("Pilih jumlah kursi " + kursiTersedia + " : ");
+                System.out.print("Pilih jumlah kursi " + kursiTersedia + " : ");
                 int jumlah = sc.nextInt(); sc.nextLine();
 
                 kereta.getKereta(keretaInput).updateJumlahKursi(jumlah);

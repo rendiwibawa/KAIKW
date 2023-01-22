@@ -41,11 +41,12 @@ class Pembayaran {
         }
         System.out.println("Total harga : " + totalHarga);
 
-        System.out.print("Masukkan uang anda : ");
-        uangBayar = sc.nextInt();
-
-        System.out.println("Uang kembalian : " + (totalHarga - uangBayar));
-
-
+        do{
+            System.out.print("Masukkan uang anda : ");
+            uangBayar = sc.nextInt();
+        }while(uangBayar < totalHarga);
+        
+        System.out.println("Uang kembalian : " + ((totalHarga - uangBayar)*-1));
+         
     }
 }

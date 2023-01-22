@@ -55,6 +55,9 @@ public class Main {
                     Pemesanan.formUi(jadwal, kereta, stasiun, scan, animation, pemesananArr);
                     Pembayaran pembayaran = new Pembayaran(pemesananArr);
                     pembayaran.formUi(scan);
+                    animation.promptEnterKey();
+                    break;
+                case 3:
                     break;
             }
 

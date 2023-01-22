@@ -4,6 +4,7 @@ class Kereta {
     String namaKereta;
     String tujuan;
     private int jumlahKursi = 40;
+    int i = 1;
 
     ArrayList<Kereta> keretaArr = new ArrayList<Kereta>();
 
@@ -21,9 +22,12 @@ class Kereta {
 
     void printKereta() {
         for (Kereta kereta : keretaArr) {
-            System.out.println("Nama : Kereta " + kereta.namaKereta);
-            System.out.println("Jumlah Kursi : " + kereta.jumlahKursi);
+            System.out.println("==================================");
+            System.out.println("(" + i++ + "). " + "Nama : Kereta " + kereta.namaKereta);
+            System.out.println("     Jumlah Kursi tersedia: " + kereta.jumlahKursi);
+            System.out.println("==================================");
         }
+        i = 1;
     }
 
     Kereta getKereta(int ind) {
