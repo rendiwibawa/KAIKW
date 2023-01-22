@@ -129,6 +129,7 @@ public class Main {
         
 
         // Kelas
+        // TODO: Tambahkan pilihan kelas serta harganya
         System.out.println("Pilih Kelas kereta (Ekonomi|Eksekutif|Bisnis) : ");
         String kelas = sc.nextLine();
 
@@ -146,6 +147,8 @@ public class Main {
 
         kereta.getKereta(keretaInput).updateJumlahKursi(jumlah);
         ticket.kelas = kelas;
+
+        // TODO: Buat kalkulasi harga bedasarkan kelas yang dipilih
         ticket.harga = jumlah * 10000;
 
         promptEnterKey();
