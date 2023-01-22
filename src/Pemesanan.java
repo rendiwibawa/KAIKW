@@ -72,8 +72,13 @@ class Pemesanan {
 
         // Kelas
         // TODO: Tambahkan pilihan kelas serta harganya
-        System.out.println("Pilih Kelas kereta (Ekonomi|Eksekutif|Bisnis) : ");
-        String kelas = sc.nextLine();
+        int pilihKelas;
+        String kelas;
+        do{
+            System.out.println("Pilih Kelas kereta (1. Ekonomi |2. Eksekutif |3. Bisnis) : ");
+            pilihKelas = sc.nextInt();
+        }while(pilihKelas < 1 || pilihKelas > 3);
+        
 
         Ticket ticket = new Ticket(
             kereta.getKereta(keretaInput),
@@ -81,6 +86,20 @@ class Pemesanan {
             pelanggan,
             stasiun.getStasiun(stasiunInput)
         );
+
+        switch (pilihKelas) {
+            case 1:
+                ticket.kelas = "Ekonomi";
+                break;
+            case 2:
+                ticket.kelas = "Eksekutif";
+                break;
+            case 3:
+                ticket.kelas = "Bisnis";
+                break;
+            default:
+                break;
+        }
 
 
         // Jumlah Kursi
