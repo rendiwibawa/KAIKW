@@ -60,7 +60,6 @@ public class Main {
                     animation.promptEnterKey();
                     break;
                 case 3:
-
                     ArrayList<Pemesanan> pemesanans = pembayaran.getPemesananArr();
 
                     for(int i = 0; i < pemesanans.size(); i++) {
