@@ -26,6 +26,8 @@ public class Main {
         kereta.inisialData();
         stasiun.inisialData();
 
+        String kelas = "";
+        int pilihJadwal;
         do {
             animation.clearScreen();
 
@@ -48,8 +50,16 @@ public class Main {
                 case 1:
                     animation.animate(5);
                     System.out.println();
-
-                    jadwal.lihatJadwal();
+                    System.out.print("Pilih kelas [1. Ekonomi | 2. Eksekutif | 3. Bisnis] : ");
+                    pilihJadwal = scan.nextInt();
+                    if (pilihJadwal == 1) {
+                        kelas = "Ekonomi";
+                    }else if(pilihJadwal == 2){
+                        kelas = "Eksekutif";
+                    }else if(pilihJadwal == 3){
+                        kelas = "Bisnis";
+                    }
+                    jadwal.lihatJadwal(kelas);
 
                     animation.promptEnterKey();
                     break;

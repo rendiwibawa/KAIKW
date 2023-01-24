@@ -4,6 +4,7 @@ import Animation.Animation;
 class Pemesanan {
     String status = "PENDING";
     static int jumlahKursi;
+    static int pilih;
 
     Ticket ticket;
 
@@ -19,10 +20,11 @@ class Pemesanan {
         String nama, email;
         int noTelp;
         int stasiunInput;
-        int jadwalInput; 
+        int jadwalInput = 0;
         int keretaInput;
 
         String isLoop = "Y";
+        String kelas = "";
         do{
                 // // GET data Pelanggan
                 do { //nama
@@ -48,11 +50,26 @@ class Pemesanan {
                     System.out.print("Pilih Stasiun (1 - 3) : ");
                     stasiunInput = sc.nextInt() - 1;
                 }while(stasiunInput < 0 || stasiunInput > 2);
-                
+
+            // TODO: Tambahkan pilihan kelas serta harganya
+            int pilihKelas;
+                do{
+                    System.out.println("Pilih Kelas kereta (1. Ekonomi |2. Eksekutif |3. Bisnis) : ");
+                    pilihKelas = sc.nextInt();
+                }while(pilihKelas < 1 || pilihKelas > 3);
+
+                if (pilihKelas == 1) {
+                    kelas = "Ekonomi";
+                }else if(pilihKelas == 2){
+                    kelas = "Eksekutif";
+               }else if(pilihKelas == 3){
+                    kelas = "Bisnis";
+                }
 
                 // Jadwal
+
                 do{
-                    jadwal.lihatJadwal();
+                    jadwal.lihatJadwal(kelas);
                     System.out.print("Pilih waktu keberangkatan (1 - 3) : ");
                     jadwalInput = sc.nextInt() - 1;
                 }while (jadwalInput < 0 || jadwalInput > 2);
@@ -64,15 +81,6 @@ class Pemesanan {
                     System.out.print("Pilih Kereta (1 - 5) : ");
                     keretaInput = sc.nextInt() - 1;
                 }while(keretaInput < 0 || keretaInput > 4);
-                
-
-                // Kelas
-                // TODO: Tambahkan pilihan kelas serta harganya
-                int pilihKelas;
-                do{
-                    System.out.println("Pilih Kelas kereta (1. Ekonomi |2. Eksekutif |3. Bisnis) : ");
-                    pilihKelas = sc.nextInt();
-                }while(pilihKelas < 1 || pilihKelas > 3);
                 
 
                 Ticket ticket = new Ticket(
